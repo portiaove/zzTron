@@ -1,0 +1,18 @@
+body {
+  padding: 0;
+  text-align: center;
+  /* background-color: #0c0429; */
+}
+
+.logo {
+    width: 540px; 
+    height: auto;
+}
+
+/* #start-bttn {
+  font-size: 24px;
+  margin: 100px;
+  border-radius: 50px;
+  width: 200px;
+  height: 50px;
+} */
