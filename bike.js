@@ -5,6 +5,7 @@ function Bike (color, x, y, vx, vy, direction) {
   this.speedY = vy * scale;
   this.trail = [];
   this.currentDirection = direction;
+  this.color = color;
   // this.muerto = false;
   // if (this.muerto) {
   //   return;
@@ -75,8 +76,8 @@ Bike.prototype.muerte = function() {
 
 var player1 = new Bike("blue", 0, 0, 1, 0, "right");
 var player2 = new Bike("red", myGame.canvas.width - scale, myGame.canvas.height - scale, -1, 0, "left");
-// var player3 = new Bike("green", 0, myGame.canvas.height - scale, 0, -1, "up");
-// var player4 = new Bike("yellow", myGame.canvas.width - scale, 0, 0, 1, "down");
+var player3 = new Bike("green", 0, myGame.canvas.height - scale, 0, -1, "up");
+var player4 = new Bike("yellow", myGame.canvas.width - scale, 0, 0, 1, "down");
 
 
 
