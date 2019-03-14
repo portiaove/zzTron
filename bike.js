@@ -10,6 +10,8 @@ function Bike (color, x, y, vx, vy, direction, name) {
   this.currentDirection = direction;
   this.color = color;
   this.muerto = false;
+  winner.push(this.color);
+
 
   this.update = function () {
     ctx = myGame.context;
@@ -58,6 +60,14 @@ Bike.prototype.muerte = function() {
   // this.speedX=0;
   // this.speedY=0;
   this.trail = [];
+  var w = winner.indexOf(this.color);
+  if (w > -1) {
+    winner.splice(w, 1)
+    if (winner.length < 2) {
+      myGame.stop(winner[0]);
+    }
+  }
+  console.log(winner);
 }
 
 //movimientos
@@ -113,11 +123,19 @@ Bike.prototype.moveRight = function() {
 
 
 
-var player4 = new Bike("yellow", myGame.canvas.width - scale, 0, 0, 1, "down");
-var player3 = new Bike("green", 0, myGame.canvas.height - scale, 0, -1, "up");
-var player2 = new Bike("red", myGame.canvas.width - scale, myGame.canvas.height - scale, -1, 0, "left");
-var player1 = new Bike("blue", 0, 0, 1, 0, "right");
-
+if (players === 4) {
+  var player4 = new Bike("yellow", myGame.canvas.width - scale, 0, 0, 1, "down");
+  var player3 = new Bike("green", 0, myGame.canvas.height - scale, 0, -1, "up");
+  var player2 = new Bike("red", myGame.canvas.width - scale, myGame.canvas.height - scale, -1, 0, "left");
+  var player1 = new Bike("blue", 0, 0, 1, 0, "right");
+} else if (players === 3) {
+  var player3 = new Bike("green", 0, myGame.canvas.height - scale, 0, -1, "up");
+  var player2 = new Bike("red", myGame.canvas.width - scale, myGame.canvas.height - scale, -1, 0, "left");
+  var player1 = new Bike("blue", 0, 0, 1, 0, "right");
+} else {
+  var player2 = new Bike("red", myGame.canvas.width - scale, myGame.canvas.height - scale, -1, 0, "left");
+  var player1 = new Bike("blue", 0, 0, 1, 0, "right");
+}
 
 
 // function color(min, max) {

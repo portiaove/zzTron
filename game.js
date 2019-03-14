@@ -2,7 +2,7 @@
 // bttn.onclick = function() {
   function startGame () {
  
-        myGame.start();
+    myGame.start();
 
     
   }
@@ -12,6 +12,8 @@
   var counter = 3;
   var players = 4;
   var name = "";
+  var winner = [];
+  var timmer = 3;
 
   var myGame = {
     canvas: document.createElement("canvas"),
@@ -20,16 +22,16 @@
       this.canvas.width = 600;
       this.canvas.height = 350;
       this.canvas.style.background = "#434b4d";
-      this.canvas.style.border = "1px solid green"
+      this.canvas.style.border = "1px solid green";
       this.context = this.canvas.getContext("2d");
       document.getElementById('start-game').appendChild(this.canvas);
       this.interval = setInterval(updateMyGame, 90);
     },
-    pausa : function() {
+    pausa : function(opt) {
       this.context.font = "50px roboto";
       this.context.fillStyle = "white";
       this.context.textAlign = "center";
-      this.context.fillText("Pause", this.canvas.width/2, this.canvas.height/2);
+      this.context.fillText(opt, this.canvas.width/2, this.canvas.height/2);
     },
     stop : function(winner) {
       clearInterval(this.interval);
@@ -38,17 +40,16 @@
       this.context.textAlign = "center";
       var pole = winner + " wins!";
       this.context.fillText(pole, this.canvas.width/2, this.canvas.height/2);
-    }
+    },
   }
 
 
   function updateMyGame () {
  
     if (pausado) { //PAUSA
-      myGame.pausa();
+      myGame.pausa("Pause");
       return;
     }
-    // myGame.context.clearRect(0, 0, myGame.canvas.width, myGame.canvas.height);
 
     if (players === 2) { //2 JUGADORES
       myGame.context.clearRect(0, 0, myGame.canvas.width, myGame.canvas.height);

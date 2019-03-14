@@ -4,10 +4,15 @@ body {
   /* background-color: #0c0429; */
 }
 
+/* canvas{
+  position: absolute;
+  z-index: 1000;
+} */
+/* 
 .logo {
     width: 540px; 
     height: auto;
-}
+} */
 
 /* #start-bttn {
   font-size: 24px;
@@ -16,3 +21,4 @@ body {
   width: 200px;
   height: 50px;
 } */
+
