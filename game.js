@@ -10,14 +10,14 @@
   var scale = 5;
   var pausado = false;
   var counter = 3;
-  var players = 2;
+  var players = 4;
 
   var myGame = {
     canvas: document.createElement("canvas"),
     start: function() {
       // this.canvas.zIndex = "1";
-      this.canvas.width = 800;
-      this.canvas.height = 550;
+      this.canvas.width = 600;
+      this.canvas.height = 350;
       this.canvas.style.background = "#434b4d";
       this.canvas.style.border = "1px solid green"
       this.context = this.canvas.getContext("2d");
@@ -36,9 +36,12 @@
 
 
   function updateMyGame () {
+ 
     if (pausado) { //PAUSA
       return;
     }
+    myGame.context.clearRect(0, 0, myGame.canvas.width, myGame.canvas.height);
+
     if (players === 2) { //2 JUGADORES
       player1.update();
       player2.update();
@@ -47,10 +50,11 @@
 
       if (player1.collision(player2.trail) ||
        player1.collision(player1.trail) ||  player1.bordes()) {
-        myGame.stop(player2.color);
+        player1.muerte();
       } else if (player2.collision(player1.trail) || 
        player2.collision(player2.trail) || player2.bordes()) {
-        myGame.stop(player1.color);
+        player2.muerte();
+
       } 
     } else if (players === 3) { //3 JUGADORES
       player1.update();
@@ -62,13 +66,13 @@
       
       if (player1.collision(player1.trail) || player1.collision(player2.trail) || 
       player1.collision(player3.trail) || player1.bordes()) {
-         console.log(player1.color);
+         player1.muerte();
       } else if (player2.collision(player1.trail) || player2.collision(player2.trail) || 
       player2.collision(player3.trail) || player2.bordes()) {
-          console.log(player2.color);
+         player2.muerte();
       } else if (player3.collision(player1.trail) || player3.collision(player2.trail) || 
       player3.collision(player3.trail) || player3.bordes()) {
-           console.log(player3.color);
+         player3.muerte();
       } 
     } else if (players === 4) { //4 JUGADORES
       player1.update();
@@ -82,16 +86,22 @@
       
        if (player1.collision(player1.trail) || player1.collision(player2.trail) || 
        player1.collision(player3.trail) || player1.collision(player4.trail) || player1.bordes()) {
-        console.log(player1.color);
+        player1.muerte();
+
       } else if (player2.collision(player1.trail) || player2.collision(player2.trail) || 
       player2.collision(player3.trail) || player2.collision(player4.trail) || player2.bordes()) {
-         console.log(player2.color);
+        player2.muerte();
+
       } else if (player3.collision(player1.trail) || player3.collision(player2.trail) || 
       player3.collision(player3.trail) || player3.collision(player4.trail) || player3.bordes()) {
-          console.log(player3.color);
+        console.log(player3.color);
+        player3.muerte();
+
       } else if (player4.collision(player1.trail) || player4.collision(player2.trail) || 
       player4.collision(player3.trail) || player4.collision(player4.trail) || player4.bordes()) {
-           console.log(player4.color);
+        console.log(player4.color);
+        player4.muerte();
+
       };
     };
   };

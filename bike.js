@@ -1,20 +1,26 @@
 function Bike (color, x, y, vx, vy, direction) {
   this.x = x;
   this.y = y;
+  this.oldX = 0;
+  this.oldY = 0;
   this.speedX = vx * scale;
   this.speedY = vy * scale;
   this.trail = [];
   this.currentDirection = direction;
   this.color = color;
-  // this.muerto = false;
+  this.muerto = false;
   // if (this.muerto) {
   //   return;
   // }
   this.update = function () {
     ctx = myGame.context;
     ctx.fillStyle = color;
-    ctx.fillRect(this.x, this.y, scale, scale);
-    return this.trail.push({x: this.x, y: this.y});
+    if(this.muerto == false) {
+      this.trail.push({x: this.x, y: this.y});
+      this.trail.forEach(function(position) {
+        ctx.fillRect(position.x, position.y, scale, scale);
+      })
+    }
   };
   this.newPos = function() {
     this.x += this.speedX;
@@ -23,30 +29,50 @@ function Bike (color, x, y, vx, vy, direction) {
   this.moveUp = function() { 
     if (this.currentDirection !== "down") {
     this.currentDirection = "up";
+    console.log(this.oldY, this.y);
+
+    if (this.oldX !== this.x) {
     this.speedY = -1 * scale;
     this.speedX = 0;
     };
+    this.oldX = this.x;
+    this.oldY = this.y;
+  };
   };
   this.moveDown = function() {
     if (this.currentDirection !== "up") {
     this.currentDirection = "down";
+    console.log(this.oldX, this.x);
+
+    if (this.oldX !== this.x) {
     this.speedY = 1 * scale;
     this.speedX = 0;
     };
+    this.oldX = this.x;
+    this.oldY = this.y;
+  };
   };
   this.moveLeft = function() {
     if (this.currentDirection !== "right") {
     this.currentDirection = "left";
+    if (this.oldY !== this.y) {
     this.speedY = 0;
     this.speedX = -1 * scale;
     };
+    this.oldX = this.x;
+    this.oldY = this.y;
+  };
   };
   this.moveRight = function() {
     if (this.currentDirection !== "left") {
     this.currentDirection = "right";
+    if (this.oldY !== this.y) {
     this.speedY = 0;
     this.speedX = 1 * scale;
     };
+    this.oldX = this.x;
+    this.oldY = this.y;
+  };
   };
 };
 
@@ -69,6 +95,7 @@ Bike.prototype.muerte = function() {
   // for (var i=0; i<this.trail.length; i++) {
   //   ctx.clearRect(this.trail[i].x, this.trail[i].y, scale, scale);
   // }
+  this.muerto = true;
   this.speedX=0;
   this.speedY=0;
   this.trail = [];
