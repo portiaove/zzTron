@@ -67,7 +67,6 @@ Bike.prototype.muerte = function() {
       myGame.stop(winner[0]);
     }
   }
-  console.log(winner);
 }
 
 //movimientos

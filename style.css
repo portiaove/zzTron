@@ -1,10 +1,16 @@
+
+@font-face {
+  font-family: gameplay;
+  src: url(/starter_code/rsrcs/Gameplay.ttf);
+}
 body {
   padding: 0;
   text-align: center;
   background-color: #0c0429;
   z-index: 0;
   font-size: 30px;
-  color: white;
+  font-family: gameplay;
+  color: lime;
 }
 
 canvas{
@@ -24,18 +30,74 @@ canvas{
 
 #start-bttn {
   font-size: 24px;
-  margin: 100px;
+  margin: 0 auto;
   border-radius: 50px;
   width: 200px;
   height: 50px;
+  font-family: gameplay;
+
 }
 
 #start-bttn:hover {
-  background-color: #84b424
+  background-color: lime;
+}
+
+#restart {
+  font-size: 24px;
+  border-radius: 50px;
+  width: 100px;
+  height: 50px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  display: none;
+
 }
 
 #plyrs {
   font-size: 24px;
   width: 30px;
   height: 30px;
+  text-align: center;
+}
+
+#he, #wi {
+  font-size: 14px;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  display: inline-block;
+
+}
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  -moz-appearance: textfield;
+}
+
+#p {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+}
+
+#pr {
+  height: 200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* resize: both; */
+  /* overflow: auto; */
+}
+
+#wihe {
+  display: flex;
+  flex-direction: row;
+}
+
+#pr div {
+  margin: 0 auto;
 }

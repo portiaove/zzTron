@@ -9,17 +9,31 @@
 <body>
   <div>
     <img src="Img/Tron_1982_logo.PNG" alt="Tron" class="logo"><br>
-    <button id="start-bttn" onclick="starttera()">Start</button>
   </div>
-  <div>
-    <label for="width">W</label>
-    <input id="wi" name="width" type="number" value="900">
-    <label id="height" for="height">H</label>
-    <input id="he" name="height" type="number" value="500">    
-    <label for="plyrs">Players</label>
-    <input id="plyrs" name="plyrs" type="number" value="2" min="2" max="4">
-    <label for="gameVel">How Fast</label>
-    <input id="gameVel" name="gameVel" type="range" min="10" max="90" value="50">
+  <button id="restart" onclick="resettera()">Restart</button>
+  <div id="p">
+    <div>
+    <button id="start-bttn" onclick="starttera()">Start</button>   
+    </div>
+    <div id="p">
+      <div id="pr">
+        <div>
+          <label for="width">W</label>
+          <input id="wi" name="width" type="number" value="900">
+          <label id="height" for="height">H</label>
+          <input id="he" name="height" type="number" value="500">    
+        </div>
+        <div>
+          <input id="plyrs" name="plyrs" type="number" value="2" min="2" max="4">
+          <label for="plyrs">Players</label>
+        </div>
+        <div>
+          <label for="gameVel">Fast</label>
+          <input id="gameVel" name="gameVel" type="range" min="10" max="110" onChange="range(this.value)">
+          <label for="gameVel">Slow</label>
+        </div>
+      </div>
+    </div>
   </div>
     <canvas id="canvas"></canvas>
 </body>
