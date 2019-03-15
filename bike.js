@@ -123,19 +123,19 @@ Bike.prototype.moveRight = function() {
 
 
 
-if (players === 4) {
-  var player4 = new Bike("yellow", myGame.canvas.width - scale, 0, 0, 1, "down");
-  var player3 = new Bike("green", 0, myGame.canvas.height - scale, 0, -1, "up");
-  var player2 = new Bike("red", myGame.canvas.width - scale, myGame.canvas.height - scale, -1, 0, "left");
-  var player1 = new Bike("blue", 0, 0, 1, 0, "right");
+function aJugar () {if (players === 4) {
+  player4 = new Bike("yellow", myGame.canvas.width - scale, 0, 0, 1, "down");
+  player3 = new Bike("green", 0, myGame.canvas.height - scale, 0, -1, "up");
+  player2 = new Bike("red", myGame.canvas.width - scale, myGame.canvas.height - scale, -1, 0, "left");
+  player1 = new Bike("blue", 0, 0, 1, 0, "right");
 } else if (players === 3) {
-  var player3 = new Bike("green", 0, myGame.canvas.height - scale, 0, -1, "up");
-  var player2 = new Bike("red", myGame.canvas.width - scale, myGame.canvas.height - scale, -1, 0, "left");
-  var player1 = new Bike("blue", 0, 0, 1, 0, "right");
+  player3 = new Bike("green", 0, myGame.canvas.height - scale, 0, -1, "up");
+  player2 = new Bike("red", myGame.canvas.width - scale, myGame.canvas.height - scale, -1, 0, "left");
+  player1 = new Bike("blue", 0, 0, 1, 0, "right");
 } else {
-  var player2 = new Bike("red", myGame.canvas.width - scale, myGame.canvas.height - scale, -1, 0, "left");
-  var player1 = new Bike("blue", 0, 0, 1, 0, "right");
-}
+  player2 = new Bike("red", myGame.canvas.width - scale, myGame.canvas.height - scale, -1, 0, "left");
+  player1 = new Bike("blue", 0, 0, 1, 0, "right");
+}}
 
 
 // function color(min, max) {

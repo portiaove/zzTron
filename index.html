@@ -7,13 +7,21 @@
   <title>Tron</title>
 </head>
 <body>
-  <!-- <div>
+  <div>
     <img src="Img/Tron_1982_logo.PNG" alt="Tron" class="logo"><br>
-    <button id="start-bttn">Start</button>
-  </div> -->
-  <div id="start-game">
-
+    <button id="start-bttn" onclick="starttera()">Start</button>
   </div>
+  <div>
+    <label for="width">W</label>
+    <input id="wi" name="width" type="number" value="900">
+    <label id="height" for="height">H</label>
+    <input id="he" name="height" type="number" value="500">    
+    <label for="plyrs">Players</label>
+    <input id="plyrs" name="plyrs" type="number" value="2" min="2" max="4">
+    <label for="gameVel">How Fast</label>
+    <input id="gameVel" name="gameVel" type="range" min="10" max="90" value="50">
+  </div>
+    <canvas id="canvas"></canvas>
 </body>
 <script type="text/javascript" src="./game.js"></script>
 <script type="text/javascript" src="bike.js"></script>
