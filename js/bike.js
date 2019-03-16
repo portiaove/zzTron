@@ -57,16 +57,19 @@ Bike.prototype.muerte = function() {
   this.muerto = true;
   this.x=undefined;
   this.y=undefined;
-  // this.speedX=0;
-  // this.speedY=0;
   this.trail = [];
+  
   var w = winner.indexOf(this.color);
   if (w > -1) {
     winner.splice(w, 1)
     if (winner.length < 2) {
+      arranqueSnd.pause();
+      choqueSnd.pause();
+      winnerSnd.play();
       myGame.stop(winner[0]);
     }
   }
+  choqueSnd.play();
 }
 
 //movimientos
@@ -135,8 +138,3 @@ function aJugar () {if (players === 4) {
   player2 = new Bike("red", myGame.canvas.width - scale, myGame.canvas.height - scale, -1, 0, "left");
   player1 = new Bike("blue", 0, 0, 1, 0, "right");
 }}
-
-
-// function color(min, max) {
-//   return Math.random() * (max - min) + min;
-// };

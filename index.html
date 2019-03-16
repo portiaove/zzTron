@@ -3,42 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
   <title>Tron</title>
 </head>
 <body>
   <div>
-    <img src="Img/Tron_1982_logo.PNG" alt="Tron" class="logo"><br>
+    <img src="srcs/Tron_1982_logo.PNG" alt="Tron" class="logo"><br>
   </div>
   <button id="restart" onclick="resettera()">Restart</button>
   <div id="p">
-    <div>
-    <button id="start-bttn" onclick="starttera()">Start</button>   
+    <div id="keys">
+      <div class="clmn">
+        <div id="azul">
+          <a>Player 1</a>
+          <a>⇧</a>
+          <a>⇦ ⇩ ⇨</a>
+        </div>
+        <div id="rojo">
+          <a>W</a>
+          <a>A S D</a>
+          <a>Player 2</a>
+        </div>
+      </div>
+      <button class="light" id="start-bttn" onclick="starttera()">Start</button>
+      <div class="clmn">
+          <div id="verde">
+            <a>Player 3</a>
+            <a>Y</a>
+            <a>G H J</a>
+          </div>
+          <div id="amarillo">
+            <a>0</a>
+            <a>O P ?</a>
+            <a>Player 4</a>
+          </div>
+        </div>   
     </div>
-    <div id="p">
-      <div id="pr">
-        <div>
-          <label for="width">W</label>
-          <input id="wi" name="width" type="number" value="900">
-          <label id="height" for="height">H</label>
-          <input id="he" name="height" type="number" value="500">    
-        </div>
-        <div>
-          <input id="plyrs" name="plyrs" type="number" value="2" min="2" max="4">
-          <label for="plyrs">Players</label>
-        </div>
-        <div>
-          <label for="gameVel">Fast</label>
-          <input id="gameVel" name="gameVel" type="range" min="10" max="110" onChange="range(this.value)">
-          <label for="gameVel">Slow</label>
-        </div>
+    <div id="pr">
+      <div>
+        <label for="width">W</label>
+        <input class="npt" id="wi" name="width" type="number" value="900" align="middle" step="20">
+        <label id="height" for="height">H</label>
+        <input class="npt" id="he" name="height" type="number" value="500" step="20">    
+      </div>
+      <div>
+        <input class="npt" id="plyrs" name="plyrs" type="number" value="2" min="2" max="4">
+        <label for="plyrs">Players</label>
+      </div>
+      <div>
+        <label for="gameVel">Fast</label>
+        <input id="gameVel" name="gameVel" type="range" min="10" max="110" onChange="range(this.value)">
+        <label for="gameVel">Slow</label>
       </div>
     </div>
   </div>
-    <canvas id="canvas"></canvas>
+  <canvas id="canvas"></canvas>
 </body>
-<script type="text/javascript" src="./game.js"></script>
-<script type="text/javascript" src="bike.js"></script>
-<script type="text/javascript" src="moves.js"></script>
+<script type="text/javascript" src="js/game.js"></script>
+<script type="text/javascript" src="js/bike.js"></script>
+<script type="text/javascript" src="js/moves.js"></script>
+<script src="srcs/Choque.mp3"></script>
+<script src="srcs/arranque.mp3"></script>
+<script src="srcs/winner.mp3"></script>
+
+
+
 
 </html>

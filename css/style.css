@@ -30,12 +30,10 @@ canvas{
 
 #start-bttn {
   font-size: 24px;
-  margin: 0 auto;
   border-radius: 50px;
   width: 200px;
   height: 50px;
   font-family: gameplay;
-
 }
 
 #start-bttn:hover {
@@ -68,7 +66,6 @@ canvas{
   height: 35px;
   text-align: center;
   display: inline-block;
-
 }
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -83,14 +80,21 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 }
 
 #pr {
-  height: 200px;
+  height: 150px;
   width: 100%;
-  margin: 0 auto;
+  margin: 30px auto 0 auto;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   /* resize: both; */
   /* overflow: auto; */
+}
+
+#keys {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 #wihe {
@@ -100,4 +104,34 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 
 #pr div {
   margin: 0 auto;
+}
+
+.clmn {
+  display: flex;
+  margin: 0 50px;
+}
+
+.clmn div {
+  display: flex;
+  flex-direction: column;
+  margin: 0 -5px;
+}
+
+#azul {
+  color: blue;
+  /* text-shadow: -2px 0 blue, 0 2px blue, 2px 0 blue, 0 -2px blue; */
+
+}
+#rojo {
+  color: red;
+}
+#verde {
+  color: green;
+}
+#amarillo {
+  color: yellow;
+}
+
+.npt {
+  border-radius: 50px;
 }

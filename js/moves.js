@@ -48,7 +48,7 @@ switch (e.keyCode) {
   case 222:
     player4.moveRight();
     break;
-  case 16:
+  case 32:
     pausado = !pausado; //PAUSA?
     break;
   }
